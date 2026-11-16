@@ -11,8 +11,7 @@ full_categories:
 screened_categories:
   - astro-ph.CO
   - astro-ph.IM
-  - cs.LG
-  - cs.AI
+  - astro-ph.SR
 
 # Announcement types to keep: new, cross, replace, replace-cross
 announce_types: [new, cross]
