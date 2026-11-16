@@ -1,0 +1,57 @@
+# ---------------------------------------------------------------------------
+# arxiv-digest configuration
+# ---------------------------------------------------------------------------
+
+# Every new + cross-listed paper in these categories is ranked on title+abstract.
+full_categories:
+  - astro-ph.GA
+
+# High-volume categories. Claude first screens the *titles* and only forwards
+# the plausible ones (at most `screen_max_forward`) to the full ranking.
+screened_categories:
+  - astro-ph.CO
+  - astro-ph.IM
+  - cs.LG
+  - cs.AI
+
+# Announcement types to keep: new, cross, replace, replace-cross
+announce_types: [new, cross]
+
+screen_max_forward: 40        # max papers promoted from the screened categories
+screen_chunk_size: 350        # titles per screening call
+
+rank_chunk_size: 120          # abstracts per ranking call
+
+# Final score = relevance*w_rel + field*w_field  (both scored 0-10 by Claude)
+weights:
+  relevance: 0.75
+  field: 0.25
+
+deep_dive:
+  min: 3                      # always deep-read at least this many
+  max: 5                      # never more than this many
+  min_score: 6.5              # papers 4..max are only deep-read above this score
+
+runner_ups: 15                # short summaries for the next N papers
+field_highlights: 3           # extra "big for the field, outside your niche" papers
+
+# Claude Code model aliases (sonnet / opus / haiku). On the Pro plan sonnet is
+# a good balance; haiku is plenty for title screening.
+models:
+  screen: haiku
+  rank: sonnet
+  summary: sonnet
+  brief: sonnet
+  learn: sonnet
+
+pdf_max_chars: 140000         # cap on paper text sent to Claude (~35k tokens)
+recent_feedback_in_prompt: 40 # most recent feedback items shown to the ranker
+
+claude_timeout_s: 900
+
+site:
+  title: "arXiv digest"
+  subtitle: "Daily triage of astro-ph.GA, cs.LG and cs.AI"
+
+# Optional: put an email here, it goes into the User-Agent sent to arXiv.
+contact_email: ""
