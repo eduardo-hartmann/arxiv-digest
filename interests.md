@@ -22,10 +22,9 @@ methods in extragalactic astrophysics.
   PFS, JWST/NIRSpec
 - Machine learning on astronomical spectra: representation learning,
   contrastive / CLIP-style multimodal models, foundation models for astronomy,
-  emulators, simulation-based inference
+  emulators, simulation-based inference, deep learning
 - Inferring galaxy physical properties (stellar mass, age, metallicity, SFR,
   dust) from spectra and photometry, and the uncertainties of those inferences
-- Large-survey data releases
 
 ## Secondary topics (interesting, rank medium)
 - Methods papers in ML that could transfer to scientific data: self-supervised
@@ -33,9 +32,9 @@ methods in extragalactic astrophysics.
   quantification, anomaly detection, normalizing flows / diffusion for inference
 - Pipelines relevant to spectroscopy
 - Detailed single-object studies unrelated to stellar populations
+- Large-survey data releases
 
 ## Less interested (rank low unless it is a big deal for the field)
-- Pure LLM / agent / benchmark papers with no link to scientific data
 - Reinforcement learning, robotics, recommender systems
 
 
