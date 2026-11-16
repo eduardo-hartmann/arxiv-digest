@@ -50,7 +50,7 @@ claude_timeout_s: 900
 
 site:
   title: "arXiv digest"
-  subtitle: "Daily triage of astro-ph.GA, cs.LG and cs.AI"
+  subtitle: "Daily triage of astro-ph"
 
 # Optional: put an email here, it goes into the User-Agent sent to arXiv.
 contact_email: ""
