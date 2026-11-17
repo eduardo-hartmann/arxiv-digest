@@ -44,6 +44,13 @@ def md(text: str) -> str:
     return markdown.markdown(text, extensions=EXT, extension_configs=EXT_CFG)
 
 
+def short_authors(p: dict, n: int = 3) -> str:
+    a = p.get("authors") or []
+    if not a:
+        return ""
+    names = ", ".join(html.escape(x) for x in a[:n]) + (" et al." if len(a) > n else "")
+    return f'<span class="authors">{names}</span>'
+
 def main():
     cfg = yaml.safe_load((ROOT / "config.yaml").read_text())
     site_title = html.escape(cfg.get("site", {}).get("title", "arXiv digest"))
@@ -69,7 +76,9 @@ def main():
 
     items = []
     for d in reversed(dates):
-        tops = ""
+        tops = "".join(
+                f"<li>{md(byid[i]['title'])[3:-4]}{short_authors(byid[i])}</li>"
+                for i in j.get("picks", []) if i in byid)
         data = ROOT / "data" / f"{d}.json"
         if data.exists():
             j = json.loads(data.read_text())
@@ -85,7 +94,6 @@ def main():
     )
     (OUT / "index.html").write_text(PAGE.format(title=site_title, site_title=site_title, nav="", body=body))
     print(f"Built {len(files)} digest page(s) into {OUT}")
-
 
 if __name__ == "__main__":
     main()
