@@ -4,7 +4,9 @@ on:
   schedule:
     # 05:30 UTC Mon-Fri, after arXiv's ~00:00 UTC announcement.
     # (GitHub may start scheduled runs some minutes late.)
-    - cron: "30 5 * * 1-5"
+    - cron: "17 5 * * 1-5"
+    - cron: "47 6 * * 1-5"
+    - cron: "23 8 * * 1-5"
   workflow_dispatch:
     inputs:
       force:
