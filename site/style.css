@@ -40,4 +40,6 @@ ul { padding-left: 1.2rem; }
 .days { list-style: none; padding: 0; }
 .day { padding: .8rem 0; border-bottom: 1px solid var(--border); }
 .day ul { margin: .3rem 0 0; font-size: .92em; color: var(--muted); }
+.day li { margin-bottom: .35rem; }
+.authors { display: block; font: 12.5px/1.4 system-ui, sans-serif; color: var(--muted); opacity: .85; }
 .arithmatex { font-size: .96em; }
