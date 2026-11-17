@@ -76,15 +76,14 @@ def main():
 
     items = []
     for d in reversed(dates):
-        tops = "".join(
-                f"<li>{md(byid[i]['title'])[3:-4]}{short_authors(byid[i])}</li>"
-                for i in j.get("picks", []) if i in byid)
+        tops = ""
         data = ROOT / "data" / f"{d}.json"
         if data.exists():
             j = json.loads(data.read_text())
             byid = {p["id"]: p for p in j.get("ranked", [])}
             tops = "".join(
-                f"<li>{md(byid[i]['title'])[3:-4]}</li>" for i in j.get("picks", []) if i in byid
+                f"<li>{md(byid[i]['title'])[3:-4]}{short_authors(byid[i])}</li>"
+                for i in j.get("picks", []) if i in byid
             )
         items.append(f'<li class="day"><a href="{d}.html"><strong>{d}</strong></a><ul>{tops}</ul></li>')
     body = (
