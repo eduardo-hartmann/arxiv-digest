@@ -1,0 +1,45 @@
+:root {
+  --bg: #fbfaf7; --fg: #1d1d1f; --muted: #6b6b70; --accent: #2a5db0;
+  --card: #ffffff; --border: #e4e2dc; --quote: #f1efe9;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #16171a; --fg: #e8e6e1; --muted: #9a9aa0; --accent: #7aa7ff;
+          --card: #1e1f23; --border: #2e3036; --quote: #24262b; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg);
+  font: 17px/1.6 Charter, "Iowan Old Style", Georgia, serif; }
+header, footer { display: flex; justify-content: space-between; align-items: center;
+  gap: 1rem; max-width: 46rem; margin: 0 auto; padding: .9rem 1.1rem;
+  font: 14px/1.4 system-ui, sans-serif; color: var(--muted); }
+header { border-bottom: 1px solid var(--border); }
+footer { border-top: 1px solid var(--border); margin-top: 2rem; }
+nav { display: flex; gap: 1.2rem; }
+.home { font-weight: 600; color: var(--fg); text-decoration: none; }
+main { max-width: 46rem; margin: 0 auto; padding: 0 1.1rem; }
+a { color: var(--accent); }
+h1 { font: 700 1.7rem/1.25 system-ui, sans-serif; margin: 1.6rem 0 .4rem; }
+h2 { font: 700 1.25rem/1.3 system-ui, sans-serif; margin: 2.4rem 0 .8rem;
+  padding-bottom: .3rem; border-bottom: 2px solid var(--border); }
+h3 { font: 650 1.08rem/1.35 system-ui, sans-serif; margin: 1.8rem 0 .3rem; }
+h4 { font: 650 .82rem/1.3 system-ui, sans-serif; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--muted); margin: 1.2rem 0 .2rem; }
+p { margin: .5rem 0; }
+code { font-size: .78em; background: var(--quote); padding: .05em .35em; border-radius: 4px; }
+blockquote { margin: .7rem 0; padding: .5rem .9rem; background: var(--quote);
+  border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; font-size: .95em; }
+blockquote p { margin: 0; }
+hr { border: 0; border-top: 1px solid var(--border); margin: 1.8rem 0; }
+details { margin: .4rem 0; }
+summary { cursor: pointer; color: var(--muted); font: 14px system-ui, sans-serif; }
+small { font: 13px system-ui, sans-serif; color: var(--muted); }
+small a { text-decoration: none; }
+ul { padding-left: 1.2rem; }
+.sub { color: var(--muted); margin-top: 0; }
+.latest { font: 600 15px system-ui, sans-serif; }
+.days { list-style: none; padding: 0; }
+.day { padding: .8rem 0; border-bottom: 1px solid var(--border); }
+.day ul { margin: .3rem 0 0; font-size: .92em; color: var(--muted); }
+.day li { margin-bottom: .35rem; }
+.authors { display: block; font: 12.5px/1.4 system-ui, sans-serif; color: var(--muted); opacity: .85; }
+.arithmatex { font-size: .96em; }
